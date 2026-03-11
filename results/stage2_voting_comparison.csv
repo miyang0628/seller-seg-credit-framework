@@ -1,0 +1,9 @@
+backend,store_size,n_stores,acc_majority_voting,acc_confidence_weighted,avg_scs
+TF-IDF + LR,5,500,0.956,0.972,0.4141
+KoBERT,5,500,0.964,0.972,0.4045
+TF-IDF + LR,10,500,0.994,0.996,0.3476
+KoBERT,10,500,0.986,0.992,0.3419
+TF-IDF + LR,20,500,1.0,1.0,0.2964
+KoBERT,20,500,1.0,1.0,0.3217
+TF-IDF + LR,50,500,1.0,1.0,0.2823
+KoBERT,50,500,1.0,1.0,0.3017

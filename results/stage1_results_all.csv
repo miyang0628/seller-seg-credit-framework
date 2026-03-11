@@ -1,0 +1,5 @@
+model,accuracy,macro_f1,weighted_f1,train_time_sec
+TF-IDF + LR (Baseline),0.8569,0.8566,0.8566,33.1
+TF-IDF + XGBoost,0.8066,0.8075,0.8075,4209.4
+TF-IDF + Random Forest,0.7887,0.7879,0.7879,311.7
+KoBERT (klue/roberta-base),0.8726,0.8724,0.8724,

@@ -1,0 +1,2 @@
+model,accuracy,macro_f1,weighted_f1,best_epoch,best_val_macro_f1
+KoBERT (klue/roberta-base),0.8726,0.8724,0.8724,5,0.873

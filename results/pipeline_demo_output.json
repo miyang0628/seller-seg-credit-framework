@@ -1,0 +1,319 @@
+{
+  "store_id": "STORE_EXP_001",
+  "store_name": "Experimental Store #001",
+  "base_date": "2023-11-01",
+  "n_products": 30,
+  "data_source": "Naver SmartStore crawled dataset (2023-11)",
+  "random_seed": 2024,
+  "stage1": {
+    "model": "TF-IDF + LR",
+    "product_accuracy": 0.9667,
+    "per_product": [
+      {
+        "prod_id": 8417127158,
+        "prod_name": "보성아산병원근조화환 배달비 무료",
+        "true_category": "여가/생활편의",
+        "pred_category": "여가/생활편의",
+        "confidence": 0.9833,
+        "correct": true
+      },
+      {
+        "prod_id": 7223340666,
+        "prod_name": "휴대용 차량용 초기 진압용 간이 소화기 미니소화기 중형",
+        "true_category": "생활/건강",
+        "pred_category": "생활/건강",
+        "confidence": 0.9514,
+        "correct": true
+      },
+      {
+        "prod_id": 7821087339,
+        "prod_name": "사무실 휴게실 업소용 5방향 파워난방 전기히터 중형급 온열기 바퀴형 난로",
+        "true_category": "디지털/가전",
+        "pred_category": "디지털/가전",
+        "confidence": 0.9854,
+        "correct": true
+      },
+      {
+        "prod_id": 8156710479,
+        "prod_name": "포토 박스 화이트 색상 리필 20장 프레임 사진북",
+        "true_category": "생활/건강",
+        "pred_category": "생활/건강",
+        "confidence": 0.6751,
+        "correct": true
+      },
+      {
+        "prod_id": 8946853964,
+        "prod_name": "식자재 보스코도로 블랙트러플 페이스트 1 180g 식당 업소용 식재료",
+        "true_category": "여가/생활편의",
+        "pred_category": "식품",
+        "confidence": 0.8642,
+        "correct": false
+      },
+      {
+        "prod_id": 8351464387,
+        "prod_name": "증권투자권유자문인력 자격증 시험 2023 2024 4주완성 한권 합격 책 수험서",
+        "true_category": "도서",
+        "pred_category": "도서",
+        "confidence": 0.9945,
+        "correct": true
+      },
+      {
+        "prod_id": 8383440528,
+        "prod_name": "[이노크아든] 프리미엄 핸디선풍기 홍크 IAP-I9 휴대용+탁상용 USB충전식",
+        "true_category": "디지털/가전",
+        "pred_category": "디지털/가전",
+        "confidence": 0.9015,
+        "correct": true
+      },
+      {
+        "prod_id": 9284326735,
+        "prod_name": "9급 공무원 8개년 기출문제집 공통과목 통합 2024 자격증 교재 책",
+        "true_category": "도서",
+        "pred_category": "도서",
+        "confidence": 0.9853,
+        "correct": true
+      },
+      {
+        "prod_id": 8878785205,
+        "prod_name": "[경주렌트카/평일] 21년식 K3급 준중형(24시간기준), 가솔린,  5인승, 자차포함, 신경주역/터미널 배반차무료",
+        "true_category": "여가/생활편의",
+        "pred_category": "여가/생활편의",
+        "confidence": 0.9889,
+        "correct": true
+      },
+      {
+        "prod_id": 8502670250,
+        "prod_name": "롤테이블 알루미늄 합금 경량 캠핑 접이식 차박 야외",
+        "true_category": "스포츠/레저",
+        "pred_category": "스포츠/레저",
+        "confidence": 0.9523,
+        "correct": true
+      },
+      {
+        "prod_id": 8562375931,
+        "prod_name": "발렌시아가 동전포켓 남성 반지갑 594315 1IZI3",
+        "true_category": "패션잡화",
+        "pred_category": "패션잡화",
+        "confidence": 0.9722,
+        "correct": true
+      },
+      {
+        "prod_id": 6000913195,
+        "prod_name": "제주도 레드향",
+        "true_category": "식품",
+        "pred_category": "식품",
+        "confidence": 0.5433,
+        "correct": true
+      },
+      {
+        "prod_id": 5678414946,
+        "prod_name": "[빅토리녹스 공식] 스위스 아미 나이프 전용 이쑤시개 - 레드 A.6141.1.100",
+        "true_category": "스포츠/레저",
+        "pred_category": "스포츠/레저",
+        "confidence": 0.6203,
+        "correct": true
+      },
+      {
+        "prod_id": 8032890033,
+        "prod_name": "페로&가토 노즈토이 삼식이면",
+        "true_category": "생활/건강",
+        "pred_category": "생활/건강",
+        "confidence": 0.4181,
+        "correct": true
+      },
+      {
+        "prod_id": 8429714139,
+        "prod_name": "지학사 중등 영어 3-2 평가문제집 저자 민찬규",
+        "true_category": "도서",
+        "pred_category": "도서",
+        "confidence": 0.9969,
+        "correct": true
+      },
+      {
+        "prod_id": 8843819932,
+        "prod_name": "아크릴 금연 안내 몰딩 표시 팻말 사인물 표지판",
+        "true_category": "가구/인테리어",
+        "pred_category": "가구/인테리어",
+        "confidence": 0.9903,
+        "correct": true
+      },
+      {
+        "prod_id": 8172293237,
+        "prod_name": "쿠쿠토이즈 코코몽 캐리어 병원놀이",
+        "true_category": "출산/육아",
+        "pred_category": "출산/육아",
+        "confidence": 0.9329,
+        "correct": true
+      },
+      {
+        "prod_id": 6424624572,
+        "prod_name": "재패니즈 체리블라썸 후레그런스 미스트 100ML",
+        "true_category": "화장품/미용",
+        "pred_category": "화장품/미용",
+        "confidence": 0.7814,
+        "correct": true
+      },
+      {
+        "prod_id": 8901402525,
+        "prod_name": "[마이티지] 넥 배색 레이스 민소매 블라우스 (MO2NA303)",
+        "true_category": "패션의류",
+        "pred_category": "패션의류",
+        "confidence": 0.9864,
+        "correct": true
+      },
+      {
+        "prod_id": 8376187367,
+        "prod_name": "칼슨  W 탁상시계 글로브 모스 그린 des. 아르만도 브리블드 D. 21cm H. 24 5cm 깊이. 14cm AA 배터리 제외",
+        "true_category": "가구/인테리어",
+        "pred_category": "가구/인테리어",
+        "confidence": 0.5382,
+        "correct": true
+      },
+      {
+        "prod_id": 8947360710,
+        "prod_name": "리스타트: 야놀자 창업자 이수진의 경영 일기",
+        "true_category": "도서",
+        "pred_category": "도서",
+        "confidence": 0.961,
+        "correct": true
+      },
+      {
+        "prod_id": 8582638945,
+        "prod_name": "모기퇴치기  충전식 전기 모기 킬러 램프 2000mAh USB 전원",
+        "true_category": "디지털/가전",
+        "pred_category": "디지털/가전",
+        "confidence": 0.9712,
+        "correct": true
+      },
+      {
+        "prod_id": 4829094386,
+        "prod_name": "[화진화장품] 프라임 풋 헬스트리트먼트 (발관리 전용 제품)",
+        "true_category": "화장품/미용",
+        "pred_category": "화장품/미용",
+        "confidence": 0.9269,
+        "correct": true
+      },
+      {
+        "prod_id": 9133306634,
+        "prod_name": "군산장례식장 전북 군산시 근조화환 조화 꽃집 당일배송 전국꽃배달서비스",
+        "true_category": "여가/생활편의",
+        "pred_category": "여가/생활편의",
+        "confidence": 0.9986,
+        "correct": true
+      },
+      {
+        "prod_id": 8216647620,
+        "prod_name": "발그레도트 배워머 임산부배가리개 랜덤2개 204551",
+        "true_category": "출산/육아",
+        "pred_category": "출산/육아",
+        "confidence": 0.6069,
+        "correct": true
+      },
+      {
+        "prod_id": 9057846889,
+        "prod_name": "윌슨 클래시 100 V2 롤랑가로스 2023 295g 테니스라켓",
+        "true_category": "스포츠/레저",
+        "pred_category": "스포츠/레저",
+        "confidence": 0.9722,
+        "correct": true
+      },
+      {
+        "prod_id": 8692076936,
+        "prod_name": "아이폰 11 프로 맥스 / 곡면 풀커버 우레탄 액정 보호 필름 5매",
+        "true_category": "디지털/가전",
+        "pred_category": "디지털/가전",
+        "confidence": 0.9595,
+        "correct": true
+      },
+      {
+        "prod_id": 7017832187,
+        "prod_name": "소근육발달 두드리는 유아실로폰 아기실로폰 악기교구",
+        "true_category": "출산/육아",
+        "pred_category": "출산/육아",
+        "confidence": 0.9847,
+        "correct": true
+      },
+      {
+        "prod_id": 8683553664,
+        "prod_name": "직업안정법: 법령, 시행령, 시행규칙",
+        "true_category": "도서",
+        "pred_category": "도서",
+        "confidence": 0.9304,
+        "correct": true
+      },
+      {
+        "prod_id": 8320501156,
+        "prod_name": "방지 강아지 해충 스프레이 Espree 알로에 허브 말 자외선 차단제 코트 파리 퇴치제 건강한 보호 32온스 농축액",
+        "true_category": "생활/건강",
+        "pred_category": "생활/건강",
+        "confidence": 0.7287,
+        "correct": true
+      }
+    ]
+  },
+  "stage2": {
+    "predicted_distribution": {
+      "여가/생활편의": {
+        "count": 3,
+        "ratio": 0.1
+      },
+      "생활/건강": {
+        "count": 4,
+        "ratio": 0.1333
+      },
+      "디지털/가전": {
+        "count": 4,
+        "ratio": 0.1333
+      },
+      "식품": {
+        "count": 2,
+        "ratio": 0.0667
+      },
+      "도서": {
+        "count": 5,
+        "ratio": 0.1667
+      },
+      "스포츠/레저": {
+        "count": 3,
+        "ratio": 0.1
+      },
+      "패션잡화": {
+        "count": 1,
+        "ratio": 0.0333
+      },
+      "가구/인테리어": {
+        "count": 2,
+        "ratio": 0.0667
+      },
+      "출산/육아": {
+        "count": 3,
+        "ratio": 0.1
+      },
+      "화장품/미용": {
+        "count": 2,
+        "ratio": 0.0667
+      },
+      "패션의류": {
+        "count": 1,
+        "ratio": 0.0333
+      }
+    },
+    "majority_voting_seg": "도서",
+    "confidence_weighted_seg": "도서",
+    "scs": 0.03866,
+    "tau": 0.3,
+    "flag": "MANUAL_REVIEW"
+  },
+  "stage3": {
+    "assigned_seg": "도서",
+    "true_dominant": "도서",
+    "seg_correct": true,
+    "assigned_model": "도서 전문 대안신용평가 모형",
+    "assumption_A1": "Segment-specific credit models assumed to exist"
+  },
+  "stage4": {
+    "notice_text": "신용평가 근거 안내문\n\n- 평가 기준일: 2023-11-01\n- 분석 상품 수: 30건\n- 상품 카테고리 분포: 도서(5건, 16.7%), 생활/건강(4건, 13.3%), 디지털/가전(4건, 13.3%)\n- 배정된 업종 세그먼트: 도서\n- 적용 신용평가 모형: 도서 전문 대안신용평가 모형\n- SCS(세그먼트 신뢰도): 0.039\n- 이의 제기 방법: 문의처로 연락 주시기 바랍니다.",
+    "notice_length": 214,
+    "llm_model": "gpt-4o-mini"
+  }
+}
