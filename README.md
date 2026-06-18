@@ -1,10 +1,12 @@
 # Explainable Seller Segmentation Framework for Alternative Credit Scoring
 
-> **Paper**: An Explainable Seller Segmentation Framework for Alternative Credit Scoring: Combining Product Name Classification and LLM-Based Notice Generation
+> **Paper**: An Explainable Seller Segment Auto-Assignment Framework: Combining Product Name Classification and LLM-Based Notice Generation for Alternative Credit Scoring
 >
-> **Author**: Munil Yang (Institute for Industrial Policy Studies)
+> **Author**: [Anonymous for blind review]
 >
-> **Status**: Under Review
+> **Journal**: Under Review
+>
+> **Status**: Revision submitted
 >
 > **Citation**: *(to be added upon publication)*
 
@@ -34,7 +36,10 @@ Input: Product name set of seller s → {x_1, x_2, ..., x_N}
 │  Classifier f_θ: x_i → (predicted label,   │
 │  confidence score)                          │
 │  Models: TF-IDF + LR / XGBoost / RF /      │
-│          klue/roberta-base                  │
+│          klue/roberta-base (M4)             │
+│          klue/bert-base (M5)                │
+│          KoELECTRA-base-v3 (M6)            │
+│          klue/roberta-large (M7)            │
 └─────────────────────┬───────────────────────┘
                       │
                       ▼
@@ -64,15 +69,17 @@ Input: Product name set of seller s → {x_1, x_2, ..., x_N}
 
 ## Key Contributions
 
-1. **End-to-end Seg assignment framework** using non-financial text (product names) as the sole input signal — the first framework to explicitly address automated segment assignment as a prerequisite step for alternative credit scoring.
+1. **End-to-end Seg assignment framework** using non-financial text (product names) as the sole input signal — the first framework to explicitly address automated segment assignment as a prerequisite step for alternative credit scoring, grounded in signalling theory.
 
 2. **SCS (Seg Confidence Score)** — a novel metric that quantifies store-level segment assignment reliability by combining dominant category ratio and Shannon Entropy:
 
 $$SCS = \frac{n_{dominant}}{N} \times \frac{1}{1 + H}$$
 
-A threshold-based (τ) AUTO / MANUAL_REVIEW branching mechanism enables flexible operational risk management.
+A threshold-based (τ) AUTO / MANUAL\_REVIEW branching mechanism enables flexible operational risk management.
 
-3. **LLM-based explainable notice generation** — Stage 4 automatically produces borrower-facing evaluation rationale notices satisfying six explainability criteria, supporting financial consumer protection compliance.
+3. **Systematic PLM comparison** — seven Stage 1 classifiers evaluated across TF-IDF-based models and four Korean PLMs (BERT, RoBERTa-base, RoBERTa-large, ELECTRA) on 110,000 Korean product names, establishing klue/roberta-large as the performance ceiling and klue/roberta-base as the practical deployment choice.
+
+4. **LLM-based explainable notice generation** — Stage 4 automatically produces borrower-facing evaluation rationale notices satisfying six explainability criteria, supporting financial consumer protection compliance.
 
 ---
 
@@ -80,12 +87,15 @@ A threshold-based (τ) AUTO / MANUAL_REVIEW branching mechanism enables flexible
 
 ### Stage 1 — Product-Level Classification (Test set: 22,011)
 
-| Model | Accuracy | Macro-F1 | Train Time |
-|---|---|---|---|
-| TF-IDF + LR (Baseline) | 0.8569 | 0.8566 | 33s |
-| TF-IDF + XGBoost | 0.8066 | 0.8075 | 4,209s |
-| TF-IDF + Random Forest | 0.7887 | 0.7879 | 312s |
-| **KoBERT (klue/roberta-base)** | **0.8726** | **0.8724** | — |
+| Model | Accuracy | Macro-F1 |
+|---|---|---|
+| TF-IDF + LR (Baseline) | 0.8564 | 0.8561 |
+| TF-IDF + XGBoost | 0.8070 | 0.8080 |
+| TF-IDF + Random Forest | 0.7882 | 0.7873 |
+| klue/roberta-base (M4) | 0.8732 | 0.8731 |
+| klue/bert-base (M5) | 0.8640 | 0.8639 |
+| KoELECTRA-base-v3 (M6) | 0.8654 | 0.8649 |
+| **klue/roberta-large (M7)** | **0.8797** | **0.8795** |
 
 ### Stage 2 — Store-Level Aggregation (500 stores per condition)
 
@@ -105,7 +115,7 @@ A threshold-based (τ) AUTO / MANUAL_REVIEW branching mechanism enables flexible
 
 ### Stage 4 — LLM Notice Quality
 
-All 3 representative cases (SCS: 0.821 / 0.412 / 0.118) passed all 6 explainability checklist items: evaluation date, product count, category distribution, assigned segment, applied model, and appeals guidance.
+All 3 representative cases (SCS: 0.821 / 0.412 / 0.118) passed all 6 explainability checklist items: evaluation date, product count, category distribution, assigned segment, applied model, and objection procedure.
 
 ---
 
@@ -116,13 +126,13 @@ seller-seg-credit-framework/
 │
 ├── README.md
 ├── data/
-│   └── sample_data.csv          # Small public sample (full data not shared)
+│   └── sample_data.csv                    # Small public sample (full data not shared)
 │
-├── 01_preprocessing.ipynb       # Data cleaning & train/val/test split
-├── 02_stage1_model_comparison.ipynb   # TF-IDF models + KoBERT fine-tuning
-├── 03_stage2_aggregation_scs.ipynb    # MV vs CWV, SCS computation, τ search
-├── 04_stage4_llm_notice.ipynb         # LLM-based notice generation (GPT-4o-mini)
-└── 05_full_pipeline_demo.ipynb        # End-to-end pipeline demo (STORE_EXP_001)
+├── 01_preprocessing.ipynb                 # Data cleaning & train/val/test split
+├── 02_stage1_model_comparison.ipynb       # TF-IDF models + PLM fine-tuning (M4–M7)
+├── 03_stage2_aggregation_scs.ipynb        # MV vs CWV, SCS computation, τ search
+├── 04_stage4_llm_notice.ipynb             # LLM-based notice generation (GPT-4o-mini)
+└── 05_full_pipeline_demo.ipynb            # End-to-end pipeline demo (STORE_EXP_001)
 ```
 
 ---
@@ -145,12 +155,17 @@ The full dataset (110,000 product names from Naver Smart Store, November 2023) i
 ## Requirements
 
 ```bash
-pip install pandas numpy scikit-learn xgboost
-pip install torch transformers  # for KoBERT (klue/roberta-base)
-pip install openai               # for Stage 4 LLM notice generation
+pip install pandas numpy scikit-learn xgboost lightgbm
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
+pip install transformers accelerate
+pip install openai  # for Stage 4 LLM notice generation
 ```
 
-Tested on Python 3.9, Anaconda environment.
+Tested on:
+- Python 3.12 (Miniconda)
+- PyTorch 2.10.0 (CUDA 12.6)
+- NVIDIA GeForce RTX 4060 Ti (16 GB VRAM)
+- Scikit-learn 1.9, Transformers (Hugging Face)
 
 ---
 
@@ -162,7 +177,7 @@ Run notebooks in order:
 # 1. Preprocessing
 jupyter notebook 01_preprocessing.ipynb
 
-# 2. Stage 1: Model comparison
+# 2. Stage 1: Model comparison (M1–M7)
 jupyter notebook 02_stage1_model_comparison.ipynb
 
 # 3. Stage 2: Aggregation & SCS
@@ -179,6 +194,10 @@ jupyter notebook 05_full_pipeline_demo.ipynb
 For Stage 4, set your API key as an environment variable:
 
 ```bash
+# Windows (PowerShell)
+$env:OPENAI_API_KEY="your-api-key-here"
+
+# Linux / macOS
 export OPENAI_API_KEY="your-api-key-here"
 ```
 
@@ -193,6 +212,5 @@ Commercial use is not permitted without the author's consent.
 
 ## Contact
 
-Munil Yang
-Institute for Industrial Policy Studies
-*(contact information available upon request)*
+[Anonymous for blind review]
+*(Contact information available upon publication)*
