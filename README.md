@@ -102,7 +102,7 @@ A threshold-based (τ) AUTO / MANUAL\_REVIEW branching mechanism enables flexibl
 | Backend | Store Size | MV Acc | CWV Acc | Avg SCS |
 |---|---|---|---|---|
 | TF-IDF + LR | 5 | 0.956 | 0.972 | 0.414 |
-| KoBERT | 5 | 0.964 | 0.972 | 0.405 |
+| KoBERT | 5 | 0.964 | 0.977 | 0.405 |
 | TF-IDF + LR | 20 | 1.000 | 1.000 | 0.296 |
 | KoBERT | 20 | 1.000 | 1.000 | 0.322 |
 
