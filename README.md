@@ -1,14 +1,17 @@
 # Explainable Seller Segmentation Framework for Alternative Credit Scoring
 
-> **Paper**: An Explainable Seller Segment Auto-Assignment Framework: Combining Product Name Classification and LLM-Based Notice Generation for Alternative Credit Scoring
+> **Paper**: Explainable Seller Segment Auto-Assignment for Alternative Credit Scoring
 >
-> **Author**: [Anonymous for blind review]
+> **Author**: Munil Yang (The Institute for Industrial Policy Studies, Seoul, Republic of Korea)
 >
-> **Journal**: Under Review
+> **Journal**: *Emerging Markets Finance and Trade* (Taylor & Francis)
 >
-> **Status**: Revision submitted
+> **Status**: Published online 07 Sep 2026
 >
-> **Citation**: *(to be added upon publication)*
+> **DOI**: [10.1080/1540496X.2026.2726415](https://doi.org/10.1080/1540496X.2026.2726415)
+>
+> **Citation**:
+> Yang, Munil. 2026. "Explainable Seller Segment Auto-Assignment for Alternative Credit Scoring." *Emerging Markets Finance and Trade*. https://doi.org/10.1080/1540496X.2026.2726415
 
 ---
 
@@ -112,6 +115,7 @@ A threshold-based (τ) AUTO / MANUAL\_REVIEW branching mechanism enables flexibl
 |---|---|---|---|
 | TF-IDF + LR | 0.15 | 92.75% | 0.9973 |
 | KoBERT | 0.20 | 80.60% | 0.9981 |
+| klue/roberta-large | 0.20 | 81.60% | 0.9994 |
 
 ### Stage 4 — LLM Notice Quality
 
@@ -203,6 +207,23 @@ export OPENAI_API_KEY="your-api-key-here"
 
 ---
 
+## Citation
+
+If you use this code or framework in your research, please cite:
+
+```bibtex
+@article{yang2026essf,
+  title   = {Explainable Seller Segment Auto-Assignment for Alternative Credit Scoring},
+  author  = {Yang, Munil},
+  journal = {Emerging Markets Finance and Trade},
+  year    = {2026},
+  doi     = {10.1080/1540496X.2026.2726415},
+  url     = {https://doi.org/10.1080/1540496X.2026.2726415}
+}
+```
+
+---
+
 ## License
 
 This repository is released for academic reproducibility purposes.
@@ -212,5 +233,6 @@ Commercial use is not permitted without the author's consent.
 
 ## Contact
 
-[Anonymous for blind review]
-*(Contact information available upon publication)*
+Munil Yang — miyang@ips.or.kr
+The Institute for Industrial Policy Studies, Finland Tower 7F, Sinchon-ro 203, Seodaemun-gu, Seoul 03767, Republic of Korea
+ORCID: [0009-0004-1493-6691](http://orcid.org/0009-0004-1493-6691)
